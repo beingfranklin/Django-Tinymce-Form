@@ -3,6 +3,8 @@
 from django.shortcuts import render
 # Create your views here.
 from django.http import HttpResponse
+from .forms import ArticleForm
 
 def index(request):
-    return HttpResponse("Hello, world. You're from the coins index")
+	context = {'form': ArticleForm()}
+	return render(request,'index.html',context)
